@@ -1,0 +1,20 @@
+# http://whitfin.io/speeding-up-maven-docker-builds/
+
+FROM maven:3.6.3-jdk-8
+
+WORKDIR /home/app
+# copy the project files
+COPY ./pom.xml ./pom.xml
+
+# build all dependencies for offline use
+RUN mvn dependency:go-offline -B
+
+# copy your other files
+COPY . .
+
+# build for release
+
+RUN mvn package
+
+# set the startup command to run your binary
+CMD ["java", "-jar", "./target/demo-0.0.1-SNAPSHOT.jar"]

@@ -1,0 +1,16 @@
+
+FROM openjdk:8-jdk-alpine
+WORKDIR /home/app
+
+# COPY ./pom.xml ./pom.xml
+# RUN mvn dependency:go-offline -B
+
+COPY . .
+
+
+EXPOSE 8080
+# COPY . .
+# CMD tail -f /dev/null
+# CMD java -jar demo.DemoApplication
+CMD ./mvnw spring-boot:run
+# CMD jave -cp app:app/lib/* demo
