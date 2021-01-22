@@ -16,6 +16,6 @@ SpringApplication.run(DemoApplication.class, args);
 
 @GetMapping("/hello")
 public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
-return String.format("HelloWorld! %s!", name);
+return String.format("HelloWorld! Docker I'm the new one %s!", name);
 }
 }

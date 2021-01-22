@@ -3,9 +3,10 @@ services:
   web:
     build: 
       context: .
-      dockerfile: Dockerfile.prod
+      dockerfile: Dockerfile.dev
     ports:
       - "8080:8080"
+
     # volumes: 
     #     - .:/home/app
     # command: tail -f /dev/null
