@@ -10,12 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DemoApplication {
 
-public static void main(String[] args) {
-SpringApplication.run(DemoApplication.class, args);
-}
+	public static void main(String[] args) {
+		SpringApplication.run(DemoApplication.class, args);
+		System.out.print("HelloWorld");
+	}
 
-@GetMapping("/hello")
-public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
-return String.format("HelloWorld! Docker I'm the new one %s!", name);
-}
+	@GetMapping("/hello")
+	public String hello(@RequestParam(value = "name", defaultValue = "World") String name) {
+		return String.format("HelloWorld! Welcome Docker! %s!", name);
+	}
+
 }

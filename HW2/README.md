@@ -7,11 +7,6 @@ just install and wait
 
 follow this > [https://spring.io/quickstart](https://spring.io/quickstart)
 
-## Docker (optional) 
-I tried to install all of it and "everything" inside container for development. I found that most of debugging tools don't work
-
-But I can create container for deployment see docker-compose.yaml that's in root dir
-
 ## Update how to development on Docker (optional) (22/1/2021)
 I found how to development inside Docker container we need 2 things
 ### 1. first, I need configurate our project
