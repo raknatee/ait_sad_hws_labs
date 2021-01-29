@@ -10,9 +10,34 @@ This lab, I create basic web app by Spring Boot with H2 database.
 
 ![](https://github.com/raknatee/ait_sad_hws_labs/blob/master/Lab1_hw/screenshots/form.PNG)
 
-### Create Enum for gender of employee
+## Code
+
+### add more dependencies
+
+#### pom.xml
+```xml
+    <!-- For Employee Model validation (such as Min Max func) -->
+    <dependency>
+        <groupId>javax.validation</groupId>
+        <artifactId>validation-api</artifactId>
+        <version>2.0.1.Final</version>
+    </dependency>
+
+    <!-- For loop over JSP -->
+	<!-- https://mvnrepository.com/artifact/jstl/jstl -->
+	<dependency>
+			<groupId>jstl</groupId>
+			<artifactId>jstl</artifactId>
+			<version>1.2</version>
+	</dependency>
+```
+
+### Create Enum for gender of employee and Min Max for Position Level
 #### Employee.java
 ```java
+import javax.validation.constraints.Min;
+import javax.validation.constraints.Max;
+
 enum GenderType{
 	Male,Female;
 }
@@ -26,6 +51,13 @@ public class Employee {
 	@Enumerated(EnumType.STRING)
 	@Column(name = "gender")
 	private GenderType gender;	
+
+    ...
+
+    @Min(1)
+	@Max(4)
+	@Column(name = "position_level")
+	private int positionLevel;
 
     ...
 
