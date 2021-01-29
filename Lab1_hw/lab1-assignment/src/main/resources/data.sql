@@ -1,0 +1,12 @@
+insert into employee(id,full_name,gender,address,salary,value,position_level) values(1, 'Kleon Gethin', 'Female', '25410 Blaine Alley', 124524.96, 77786.47, 3);
+insert into employee(id,full_name,gender,address,salary,value,position_level) values(2, 'Parker Marciskewski', 'Female', '4 Forest Run Place', 39659.24, 19301.53, 2);
+insert into employee(id,full_name,gender,address,salary,value,position_level) values(3, 'Amitie Birkett', 'Female', '114 Anniversary Parkway', 37437.89, 111061.29, 4);
+insert into employee(id,full_name,gender,address,salary,value,position_level) values(4, 'George Bootland', 'Female', '594 Express Way', 15193.29, 31094.23, 3);
+insert into employee(id,full_name,gender,address,salary,value,position_level) values(5, 'Ingeberg Meineck', 'Female', '98356 Brickson Park Lane', 74554.34, 81292.83, 3);
+insert into employee(id,full_name,gender,address,salary,value,position_level) values(6, 'Ketti Ebbotts', 'Male', '7 Kennedy Alley', 113482.01, 85708.12, 2);
+insert into employee(id,full_name,gender,address,salary,value,position_level) values(7, 'Joell cornhill', 'Female', '00772 Acker Terrace', 20890.73, 145642.93, 4);
+insert into employee(id,full_name,gender,address,salary,value,position_level) values(8, 'Hetti Bourbon', 'Male', '31360 Dapin Junction', 67339.44, 34583.67, 1);
+insert into employee(id,full_name,gender,address,salary,value,position_level) values(9, 'Lora Bwye', 'Female', '1489 Holy Cross Drive', 144553.55, 103448.72, 2);
+insert into employee(id,full_name,gender,address,salary,value,position_level) values(10, 'Faun Toquet', 'Male', '60 Starling Road', 41355.77, 28896.87, 4);
+insert into employee(id,full_name,gender,address,salary,value,position_level) values(11, 'Roland Retchless', 'Male', '890 Tennessee Trail', 92995.83, 53071.03, 2);
+insert into employee(id,full_name,gender,address,salary,value,position_level) values(12, 'Marissa Roland', 'Female', '1 American Ash Avenue', 148001.94, 135028.63, 3);

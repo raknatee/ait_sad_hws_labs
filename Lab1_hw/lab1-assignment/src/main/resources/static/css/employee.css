@@ -1,0 +1,66 @@
+* {
+    box-sizing: border-box;
+    font-size: 10px;
+	margin:0;
+	padding:0;
+}
+
+p {
+    font-family: verdana;
+    font-size: 1.5rem;
+}
+
+.main_grid {
+	margin:5vh 5vw;
+
+    display: grid;
+    row-gap: 5rem;
+    column-gap: 5rem;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    
+}
+.box_shadow{
+	box-shadow: 4px 5px 12px -4px rgba(0,0,0,0.75);
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    padding:1rem;
+    border-radius: 5px;
+    height:100%;
+    width:80%;
+    position: relative;
+    
+    
+   
+}
+.my_icon1{
+	position: absolute;
+}
+
+.my_icon1:hover{
+	cursor: pointer;
+}
+:root {
+  --icon_margin: 1rem;
+}
+.edit_icon{
+	right:var(--icon_margin);
+	top:var(--icon_margin);
+	height:3rem;
+}
+.del_icon{
+	height:3rem;
+	bottom: var(--icon_margin);
+	right:var(--icon_margin);
+}
+.minus_net_value {
+    background-color: brown;
+    color: #eeeeee;
+}
+
+.positive_net_value {
+    background-color: green;
+    color: #eeeeee;
+}
