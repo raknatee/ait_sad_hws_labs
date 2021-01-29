@@ -53,9 +53,7 @@ public class EmployeeController {
 	}
 	
 	@RequestMapping(path = "/employee", method = RequestMethod.POST)
-//	@ResponseBody
 	public String employeePostFunc(Employee e) {
-//		return e.toString();
 		dao.save(e);
 		return "redirect:/";
 	}
