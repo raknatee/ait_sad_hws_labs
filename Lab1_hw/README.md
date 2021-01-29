@@ -16,6 +16,7 @@ This lab, I create basic web app by Spring Boot with H2 database.
 
 #### pom.xml
 ```xml
+
     <!-- For Employee Model validation (such as Min Max func) -->
     <dependency>
         <groupId>javax.validation</groupId>
@@ -30,6 +31,7 @@ This lab, I create basic web app by Spring Boot with H2 database.
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 	</dependency>
+    
 ```
 
 ### Create Enum for gender of employee and Min Max for Position Level
