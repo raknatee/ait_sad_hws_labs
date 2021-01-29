@@ -4,11 +4,11 @@ This lab, I create basic web app by Spring Boot with H2 database.
 
 ## Screenshots
 
-![alt text](https://github.com/raknatee/ait_sad_hws_labs/blob/master/Lab1_hw/screenshots/home.PNG)
+![](https://github.com/raknatee/ait_sad_hws_labs/blob/master/Lab1_hw/screenshots/home.PNG)
 
 ***
 
-![alt text](https://github.com/raknatee/ait_sad_hws_labs/blob/master/Lab1_hw/screenshots/form.PNG)
+![](https://github.com/raknatee/ait_sad_hws_labs/blob/master/Lab1_hw/screenshots/form.PNG)
 
 ### Create Enum for gender of employee
 #### Employee.java
@@ -20,6 +20,7 @@ enum GenderType{
 @Entity
 @Table(name="employee")
 public class Employee {
+
 	...
 
 	@Enumerated(EnumType.STRING)
@@ -27,6 +28,7 @@ public class Employee {
 	private GenderType gender;	
 
     ...
+
 }
 ```
 
