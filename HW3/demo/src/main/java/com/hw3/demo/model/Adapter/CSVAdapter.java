@@ -8,9 +8,6 @@ public class CSVAdapter implements TextFormattable{
 	}
 	@Override
 	public String formatText(String text) {
-		// TODO Auto-generated method stub
 		return this.csvFormatter.formatCSVText(text);
 	}
-	
-
 }
