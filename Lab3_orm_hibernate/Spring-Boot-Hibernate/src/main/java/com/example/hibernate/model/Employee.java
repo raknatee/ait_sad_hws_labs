@@ -7,6 +7,8 @@ import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
@@ -43,6 +45,7 @@ import lombok.ToString;
 public class Employee {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 
 	private Name name; // since this is a object
@@ -63,13 +66,17 @@ public class Employee {
 	// and a many-to-one relationship, where the cascade being useful for
 	// the one-to-many side only:.
 	// When employee is removed, also remove addresses
+	
+	
 	@OneToMany(fetch = FetchType.LAZY, mappedBy = "emp", cascade = CascadeType.ALL, orphanRemoval = true)
+//	@OneToMany(mappedBy = "emp")
 	@JsonIgnore
 	@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 	private List<Address> addresses;
 
 	// When you load employee, it will not load benefits by default
 	@ManyToMany(fetch = FetchType.LAZY, cascade = { CascadeType.PERSIST, CascadeType.MERGE })
+//	@ManyToMany( cascade = { CascadeType.PERSIST, CascadeType.MERGE })
 	@JsonIgnore
 	@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 	private Set<Benefit> benefits;
@@ -82,14 +89,10 @@ public class Employee {
 	@Transient
 	private String something_we_do_not_put_into_object;
 
-	// When you load employee, it will load user (for one-to-one)
-	// by default
-	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
-	@JoinColumn(name = "user_id", referencedColumnName = "id") // (optional)this will create user id in employee table
-	@JsonIgnore
-	@MapsId // use the same id as user, will called emp_user_id
-	// @org.hibernate.annotations.Cache(usage =
-	// CacheConcurrencyStrategy.READ_WRITE) //Provide cache strategy.
+
+	
+	
+	@OneToOne(mappedBy = "emp", cascade = CascadeType.ALL, orphanRemoval = true)
 	private User user;
 
 	/*

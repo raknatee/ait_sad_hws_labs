@@ -3,12 +3,17 @@ package com.example.hibernate.model;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.MapsId;
 import javax.persistence.OneToOne;
 
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -47,15 +52,10 @@ public class User{
        OneToOne: EAGER
 	 */
 	
-	//When you load user, it will not load employee by default
-	//Cascading only makes sense only for Parent – Child associations 
-	//(the Parent entity state transition being cascaded to 
-	//its Child entities).
-	//if User is removed, then also remove employee (same for save, update, detach, refresh)
-	//this mapping will be mapped by Employee table which will have user_id
-	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
-	//@org.hibernate.annotations.Cache(usage = 
-	//CacheConcurrencyStrategy.READ_WRITE)
+	@OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, orphanRemoval = true)
+	@JoinColumn(name = "employee_id", referencedColumnName = "id")
+	@JsonIgnore
+	@MapsId 
 	private Employee emp;
 
 	public User(String username, String password, String role, boolean active, Employee emp) {

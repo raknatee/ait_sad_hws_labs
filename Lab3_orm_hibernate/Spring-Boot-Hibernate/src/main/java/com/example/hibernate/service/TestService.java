@@ -33,7 +33,7 @@ public class TestService {
 		// after commit entity will become detached
 	}
 
-	@Transactional // will handle session automatically
+	@Transactional 
 	public void testFetch(int id) {
 		System.out.println("-- Loading entities --");
 		Employee employee = em.find(Employee.class, id);
