@@ -30,38 +30,32 @@ import lombok.ToString;
 
 public class User {
 
-		
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 
-		@Id
-		@GeneratedValue(strategy = GenerationType.IDENTITY)
-		private int id;
-		
-		@Column(nullable = false)
-		@NotBlank(message = "This field is requried.")
-		private String username;
-		
-		@NotBlank(message = "This field is required.")
-		@Column(nullable=false)
-		private String password;
-		
-		@ManyToMany(fetch = FetchType.EAGER,cascade=CascadeType.ALL)
-		@JsonBackReference
-		private Set<Role> roles;
-		
-		
-		@OneToOne(mappedBy="user", cascade = CascadeType.ALL,orphanRemoval = true)
-		private Employee emp;
-		
-		public boolean hasRole(String role) {
-			for(Role r: this.roles) {
-				if(r.equals(role)) {
-					return true;
-				}
+	@Column(nullable = false)
+	@NotBlank(message = "This field is requried.")
+	private String username;
+
+	@NotBlank(message = "This field is required.")
+	@Column(nullable = false)
+	private String password;
+
+	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+	@JsonBackReference
+	private Set<Role> roles;
+
+	@OneToOne(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true)
+	private Employee emp;
+
+	public boolean hasRole(String role) {
+		for (Role r : this.roles) {
+			if (r.equals(role)) {
+				return true;
 			}
-			return false;
 		}
+		return false;
+	}
 
-
-		
-		
 }
