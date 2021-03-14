@@ -1,0 +1,16 @@
+version: "3.3"
+services:
+  web:
+    build: 
+      context: .
+      dockerfile: Dockerfile.prod
+    image: docker.io/raknatee/note-java:1.0.0
+    ports:
+      - "8080:8080"
+
+    # volumes: 
+    #     - .:/home/app
+    # command: tail -f /dev/null
+    #   - ./target/dependency/BOOT-INF/lib:/app/lib
+    #   - ./target/dependency/META-INF:/app/META-INF
+    #   - ./target/dependency/BOOT-INF/classes:/app
